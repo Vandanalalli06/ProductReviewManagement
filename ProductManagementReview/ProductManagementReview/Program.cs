@@ -42,13 +42,15 @@ namespace ProductReviewManagementUsingLinq
                 //Console.WriteLine("ProductId :-" + list.ProductID + " " + "UserId :-" + list.UserID + " " + "Rating :-" + " " + list.Rating + " "
                 //+ "Review :-" + list.Review + " " + "isLike :-" + list.isLike);
             }
-            Console.WriteLine("The top three records of list are");
+           // Console.WriteLine("The top three records of list are");
             ProductManagement productManagement = new ProductManagement();
 
             // To Retrieve top three records with having high ratings
             //productManagement.GetTopThreeRecords(productReviewList);
-            Console.WriteLine("---------------RecordsID-1-4-9---------");
-            productManagement.GetRecords(productReviewList);
+            //Console.WriteLine("---------------RecordsID-1-4-9---------");
+            //productManagement.GetRecords(productReviewList);
+            Console.WriteLine("----Review count for each product ID:");
+            productManagement.RetrieveReviewCount(productReviewList);
         }
     }
 }
