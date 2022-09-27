@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProductReviewManagementUsingLinq
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -35,14 +35,18 @@ namespace ProductReviewManagementUsingLinq
                 new ProductReview(){ ProductID = 22, UserID = 10, Rating = 3, Review = "Bad", isLike = false},
                 new ProductReview(){ ProductID = 23, UserID = 18, Rating = 2, Review = "bad", isLike = false},
                 new ProductReview(){ ProductID = 24, UserID = 20, Rating = 9, Review = "Good", isLike = false},
-                new ProductReview(){ ProductID = 25, UserID = 20, Rating = 10, Review = "Good", isLike = false},
+                new ProductReview(){ ProductID = 25, UserID = 20, Rating = 8, Review = "Good", isLike = false},
             };
-            /// Iterating through list.
             foreach (var list in productReviewList)
             {
                 Console.WriteLine("ProductId :-" + list.ProductID + " " + "UserId :-" + list.UserID + " " + "Rating :-" + " " + list.Rating + " "
                 + "Review :-" + list.Review + " " + "isLike :-" + list.isLike);
             }
+            Console.WriteLine("The top three records of list are");
+            ProductManagement productManagement = new ProductManagement();
+
+            /// To Retrieve top three records with having high ratings
+            productManagement.GetTopThreeRecords(productReviewList);
         }
     }
 }
